@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>sp.med.group.webApi</name>
+    </assembly>
+    <members>
+        <member name="M:sp.med.group.webApi.Interfaces.IClinicaRepository.ListarTodas">
+            <summary>
+            Lista todas as clínicas 
+            </summary>
+            <returns>Uma lista de clínicas</returns>
+        </member>
+        <member name="M:sp.med.group.webApi.Interfaces.IClinicaRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um clínica através de um id
+            </summary>
+            <param name="id">id da clínica buscada</param>
+            <returns>A clínica encontrada</returns>
+        </member>
+        <member name="M:sp.med.group.webApi.Interfaces.IClinicaRepository.Cadastrar(sp.med.group.webApi.Domains.Clinica)">
+            <summary>
+            Cadastra uma novaClinica 
+            </summary>
+            <param name="novaClinica">A clínica que será cadastrada</param>
+        </member>
+        <member name="M:sp.med.group.webApi.Interfaces.IClinicaRepository.Atualizar(sp.med.group.webApi.Domains.Clinica)">
+            <summary>
+            Atualiza uma clínica existente
+            </summary>
+            <param name="clinicaAtualizada">Uma clínica atualizada</param>
+        </member>
+        <member name="M:sp.med.group.webApi.Interfaces.IClinicaRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta uma clínica através de um id
+            </summary>
+            <param name="id">id da clínica que será deletada</param>
+        </member>
+        <member name="M:sp.med.group.webApi.Interfaces.IConsultaRepository.ListarTodas">
+            <summary>
+            Lista todas as consultas 
+            </summary>
+            <returns>Uma lista de consultas</returns>
+        </member>
+        <member name="M:sp.med.group.webApi.Interfaces.IConsultaRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca uma consulta através de um id
+            </summary>
+            <param name="id">id da consulta buscada</param>
+            <returns>A consulta encontrada</returns>
+        </member>
+        <member name="M:sp.med.group.webApi.Interfaces.IConsultaRepository.Cadastrar(sp.med.group.webApi.Domains.Consulta)">
+            <summary>
+            Cadastra uma novaConsulta 
+            </summary>
+            <param name="novaConsulta">A consulta que será cadastrada</param>
+        </member>
+        <member name="M:sp.med.group.webApi.Interfaces.IConsultaRepository.AtualizarStatus(sp.med.group.webApi.ViewModels.ConsultaViewModel)">
+            <summary>
+            Atualiza o status de uma consulta existente
+            </summary>
+            <param name="consultaAtualizada">Uma consulta Atualizada</param>
+        </member>
+        <member name="M:sp.med.group.webApi.Interfaces.IConsultaRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta uma consulta através de uma id
+            </summary>
+            <param name="id">id da consulta que será deletada</param>
+        </member>
+        <member name="M:sp.med.group.webApi.Interfaces.IUsuarioRepository.ListarTodos">
+            <summary>
+            Lista todos os usuários 
+            </summary>
+            <returns>Uma lista de usuários</returns>
+        </member>
+        <member name="M:sp.med.group.webApi.Interfaces.IUsuarioRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um usuário através de um id
+            </summary>
+            <param name="id">id do usuário buscado</param>
+            <returns>O usuário encontrado</returns>
+        </member>
+        <member name="M:sp.med.group.webApi.Interfaces.IUsuarioRepository.Cadastrar(sp.med.group.webApi.Domains.Usuario)">
+            <summary>
+            Cadastra um novoUsuario 
+            </summary>
+            <param name="novoUsuario">O usuário que será cadastrado</param>
+        </member>
+        <member name="M:sp.med.group.webApi.Interfaces.IUsuarioRepository.Atualizar(System.Int32,sp.med.group.webApi.Domains.Usuario)">
+            <summary>
+            Atualiza um usuário existente
+            </summary>
+            <param name="usuarioAtualizado">Um usuário atualizado</param>
+            <param name="idUsuario">Id do usuário que terá os dados atualizados</param>
+        </member>
+        <member name="M:sp.med.group.webApi.Interfaces.IUsuarioRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um usuário através de um id
+            </summary>
+            <param name="id">id do usuário que será deletado</param>
+        </member>
+        <member name="M:sp.med.group.webApi.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
+            <summary>
+            Autentica o usuario por meio de seu email e senha
+            </summary>
+            <param name="email">Email do usuario</param>
+            <param name="senha">Senha do usuario</param>
+            <returns>Um usuario autenticado, caso corresponda a um registro do BD </returns>
+        </member>
+        <member name="T:sp.med.group.webApi.ViewModels.LoginViewModel">
+            <summary>
+            Classe responsável pelo modelo de login
+            </summary>
+        </member>
+    </members>
+</doc>

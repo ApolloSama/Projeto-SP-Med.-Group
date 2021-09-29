@@ -70,6 +70,13 @@ idConsulta INT PRIMARY KEY IDENTITY (1,1),
 idPaciente INT FOREIGN KEY REFERENCES paciente(idPaciente),
 idMedico INT FOREIGN KEY REFERENCES medico (idMedico),
 idSituacao TINYINT FOREIGN KEY REFERENCES situacao(idSituacao),
-dataConsulta DATETIME NOT NULL,
+dataConsulta DATE NOT NULL,
+descricao VARCHAR (300)
 );
 GO
+
+SELECT * FROM usuario;
+SELECT * FROM paciente;
+SELECT * FROM medico;
+SELECT * FROM tipoUsuario;
+SELECT * FROM consulta;
