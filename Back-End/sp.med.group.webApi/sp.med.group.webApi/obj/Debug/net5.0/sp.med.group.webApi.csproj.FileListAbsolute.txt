@@ -135,3 +135,4 @@ C:\Users\48967937814\Desktop\Projeto-SP-Med.-Group\Back-End\sp.med.group.webApi\
 C:\Users\48967937814\Desktop\Projeto-SP-Med.-Group\Back-End\sp.med.group.webApi\sp.med.group.webApi\obj\Debug\net5.0\sp.med.group.webApi.xml
 C:\Users\48967937814\Desktop\Projeto-SP-Med.-Group\Back-End\sp.med.group.webApi\sp.med.group.webApi\obj\Debug\net5.0\sp.med.group.webApi.pdb
 C:\Users\48967937814\Desktop\Projeto-SP-Med.-Group\Back-End\sp.med.group.webApi\sp.med.group.webApi\obj\Debug\net5.0\sp.med.group.webApi.genruntimeconfig.cache
+C:\Users\48967937814\Desktop\Projeto-SP-Med.-Group\Back-End\sp.med.group.webApi\sp.med.group.webApi\obj\Debug\net5.0\sp.med.group.webApi.csproj.CopyComplete
