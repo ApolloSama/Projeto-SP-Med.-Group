@@ -20,7 +20,7 @@ import NotFound from "./pages/notFound/notFound"
 
 const PermissaoMedico = ({ component: Component }) => (
   <Route
-   render={(props) =>
+   render={ (props) =>
     usuarioAutenticado() && parseJwt().role === "2" ?
      ( <Component {...props}/>) : 
      (<Redirect to="login"/>)
@@ -30,7 +30,7 @@ const PermissaoMedico = ({ component: Component }) => (
 
 const PermissaoPaciente = ({ component: Component }) => (
   <Route
-   render={(props) =>
+   render={ (props) =>
     usuarioAutenticado() && parseJwt().role === "3" ?
      ( <Component {...props}/>) : 
      (<Redirect to="login"/>)

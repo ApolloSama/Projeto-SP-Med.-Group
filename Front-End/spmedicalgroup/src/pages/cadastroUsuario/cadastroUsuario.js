@@ -1,13 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
+
 export default function Usuarios() {
 
     const [ isLoading, setIsLoading] = useState( false ) 
 
     const [ listaUsuarios, setlistaUsuarios] = useState( [] )
 
-    const [ titulo, setTitulo ] = useState( '' )
+    const [ nome, setNome ] = useState( '' )
+
+    const [ idTipoUsuario, setIdTipoUsuario ] = useState ( null )
+
+    const [ email, setEmail ] = useState ( '' )
+
+    const [senha, setSenha] = useState( '' )
+
+    const [ batata, setBatata ] = useState( '' )
+
+    
 
         function cadastrarUsuario(event) {
             setIsLoading( true )
@@ -23,13 +35,17 @@ export default function Usuarios() {
                 if (response.status === 200) {
                     console.log("Usuário Cadastrado Com sucesso!")
 
-                    setTitulo ('')
+                    setNome ('')
                     setIsLoading(false)
                 }
 
-            }).catch( erro => console.log(erro), setTitulo(''), setIsLoading(false))
+            }).catch( erro => console.log(erro), setNome(''), setIsLoading(false))
                 
         }
+
+
+
+
 
         return (
             <div>
@@ -44,8 +60,8 @@ export default function Usuarios() {
                                     {
                                         listaUsuarios.map( (usuario) => {
                                             return(
-                                                <tr key={usuario.titulo}>
-                                                    <td>{usuario.titulo}</td>
+                                                <tr key={usuario.nome}>
+                                                    <td>{usuario.nome}</td>
                                                 </tr>
                                             )
                                         } ) 
@@ -63,8 +79,8 @@ export default function Usuarios() {
                             <div>
                                 <input
                                  type="text"
-                                 value={titulo}
-                                 onChange={ (campo) => setTitulo(campop.target.value) }
+                                 value={nome}
+                                 onChange={ (campo) => setNome(campo.target.value) }
                                  placeholder="Nome do usuário"
                                 />
 

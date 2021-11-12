@@ -1,49 +1,111 @@
-import { Component, useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
-import { parseJwt, usuarioAutenticado } from '../../services/auth';
-import { Link } from 'react-router-dom';
+
 
 export default function Login() {
-  const [email, setEmail] = useState( '' )
+  const [email, setEmail] = useState('')
 
-  const [senha, setSenha] = useState( '' )
+  const [senha, setSenha] = useState('')
 
-  const [errorMsg, setErrorMsg] = useState( '' )
+  const [errorMsg, setErrorMsg] = useState('')
 
-  const [isLoading, setIsLoading] = useState( false )
-}
+  const [isLoading, setIsLoading] = useState(false)
 
 
-fazerLogin = (event) => {
 
-  event.preventDefault()
-  
-  setIsLoading(true)
-  setErrorMsg( '' )
 
-  axios.post('http://localhost:5000/api/Login', {
-    
-    email: email,
-    senha: senha
+  fazerLogin = (event) => {
 
-  }).then ( (resposta) => {
+    event.preventDefault()
 
-    if (resposta.status === 200) {
+    setIsLoading(true)
+    setErrorMsg('')
 
-      localStorage.setItem('login-usuario', resposta.data.token)
+    axios.post('http://localhost:5000/api/Login', {
 
-      setIsLoading( false )
+      email: email,
+      senha: senha
 
-    }
+    }).then((resposta) => {
 
-  }).catch(() => {
-    setErrorMsg('Email ou senha incorretos')
-    setIsLoading(false)
-  })
+      if (resposta.status === 200) {
 
-}
+        localStorage.setItem('login-usuario', resposta.data.token)
 
-atualizaState = (campo) => {
+        setIsLoading(false)
 
-  setSenha({ [campo.target.name] : [campo.target.value]} )
-}
+      }
+
+    }).catch(() => {
+      setErrorMsg('Email ou senha incorretos')
+      setIsLoading(false)
+    })
+
+  }
+
+
+
+  atualizaState = (campo) => {
+
+    setSenha({ [campo.target.name]: [campo.target.value] })
+  }
+
+
+
+
+
+    return (
+
+      <div>
+        <main>
+          <section>
+            <form onSubmit={fazerLogin}>
+
+              <div>
+                <input
+                  type="text"
+                  name="email"
+                  value={email}
+                  onChange={atualizaState}
+                  placeholder="nome do usuário"
+                />
+              </div>
+
+              <div>
+                <input
+                  type="password"
+                  name="senha"
+                  value={senha}
+                  onChange={atualizaState}
+                  placeholder="senha"
+                />
+              </div>
+
+              <div>
+
+                <p style={{ color: 'red' }}>{errorMsg}</p>
+
+                isLoading === true && (
+                <button type="submit" disabled>
+                  Loading...
+                </button>
+                )
+
+                isLoading === false && (
+                <button
+                  type="submit"
+                  disabled={email === '' || senha === '' ?
+                    'none' : ''}
+                />
+                )
+
+              </div>
+
+            </form>
+          </section>
+        </main>
+      </div>
+
+    )
+
+  }
