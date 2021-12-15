@@ -34,6 +34,8 @@ namespace sp.med.group.webApi.Interfaces
         /// <param name="consultaAtualizada">Uma consulta Atualizada</param>
         void AtualizarStatus(ConsultaViewModel consultaAtualizada);
 
+        void CancelarConsulta(int idConsulta);
+
         /// <summary>
         /// Deleta uma consulta através de uma id
         /// </summary>

@@ -1,8 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 import {
   Route,
   BrowserRouter as Router,
@@ -14,9 +11,22 @@ import { parseJwt, usuarioAutenticado } from './services/auth';
 
 import './index.css';
 
-import Login from "./pages/login/login"
+import Login from "./pages/login/App"
 import NotFound from "./pages/notFound/notFound"
+import Usuarios from "./pages/cadastroUsuario/cadastroUsuario"
+import Administrador from './pages/Admin/admin'
+import Medico from './pages/Medico/medico';
+import Paciente from './pages/Paciente/paciente';
 
+const PermissaoAdm = ({ component: Component }) => (
+  <Route
+   render={ (props) =>
+    usuarioAutenticado() && parseJwt().role === "1" ?
+     ( <Component {...props}/>) : 
+     (<Redirect to="login"/>)
+  }
+  />
+)
 
 const PermissaoMedico = ({ component: Component }) => (
   <Route
@@ -43,7 +53,10 @@ const routing= (
     <div>
       <Switch>
         <Route exact path="/" component={Login}/>
-        <Route path="/notFound" component={NotFound} />
+        <Route path="/login" component={Login} />
+        <PermissaoAdm path="/administrador" component={Administrador} />
+        <PermissaoMedico path="/medico" component={Medico} />
+        <PermissaoPaciente path="/paciente" component={Paciente} />
         <Redirect to="/notfound" />
       </Switch>
     </div>
@@ -58,4 +71,3 @@ ReactDOM.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

@@ -21,11 +21,23 @@ namespace sp.med.group.webApi
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            // Define o uso de Controllers
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                                builder =>
+                                {
+                                    builder.WithOrigins("http://localhost:3000")
+                                    .AllowAnyHeader()
+                                    .AllowAnyMethod();
+                                });
+            });
+
+
             services
                 .AddControllers()
 
-                // Adicionando Pacote NewtonSoft para quebrar ciclo de atribuiÁıes dos objetos
+
                 .AddNewtonsoftJson(options =>
                 {
                     options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
@@ -68,13 +80,13 @@ namespace sp.med.group.webApi
                 {
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
-                        // Valida quem est· solicitando
+                        // Valida quem estÅEsolicitando
                         ValidateIssuer = true,
 
-                        // Valida quem est· recebendo
+                        // Valida quem estÅErecebendo
                         ValidateAudience = true,
 
-                        // Define se o tempo de expiraÁ„o ser· validado
+                        // Define se o tempo de expiraÁ„o serÅEvalidado
                         ValidateLifetime = true,
 
                         // Forma de criptografia e ainda valida a chave de autenticaÁ„o
@@ -83,10 +95,10 @@ namespace sp.med.group.webApi
                         // Valida o tempo de expiraÁ„o do token
                         ClockSkew = TimeSpan.FromMinutes(30),
 
-                        // Nome do issuer, de onde est· vindo
+                        // Nome do issuer, de onde estÅEvindo
                         ValidIssuer = "medGroup.WebAPI",
 
-                        // Nome do audience, para onde est· indo
+                        // Nome do audience, para onde estÅEindo
                         ValidAudience = "medGroup.WebAPI"
                     };
                 });
@@ -111,6 +123,8 @@ namespace sp.med.group.webApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors("CorsPolicy");
 
             app.UseRouting();
 

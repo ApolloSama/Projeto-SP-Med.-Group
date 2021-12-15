@@ -58,7 +58,6 @@ C:\Users\Pedro\Desktop\Projeto-SP-Med.-Group\Back-End\sp.med.group.webApi\sp.med
 C:\Users\Pedro\Desktop\Projeto-SP-Med.-Group\Back-End\sp.med.group.webApi\sp.med.group.webApi\obj\Debug\net5.0\sp.med.group.webApi.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Pedro\Desktop\Projeto-SP-Med.-Group\Back-End\sp.med.group.webApi\sp.med.group.webApi\obj\Debug\net5.0\sp.med.group.webApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Pedro\Desktop\Projeto-SP-Med.-Group\Back-End\sp.med.group.webApi\sp.med.group.webApi\obj\Debug\net5.0\staticwebassets\sp.med.group.webApi.StaticWebAssets.Manifest.cache
-C:\Users\Pedro\Desktop\Projeto-SP-Med.-Group\Back-End\sp.med.group.webApi\sp.med.group.webApi\obj\Debug\net5.0\staticwebassets\sp.med.group.webApi.StaticWebAssets.xml
 C:\Users\Pedro\Desktop\Projeto-SP-Med.-Group\Back-End\sp.med.group.webApi\sp.med.group.webApi\obj\Debug\net5.0\scopedcss\bundle\sp.med.group.webApi.styles.css
 C:\Users\Pedro\Desktop\Projeto-SP-Med.-Group\Back-End\sp.med.group.webApi\sp.med.group.webApi\obj\Debug\net5.0\sp.med.group.webApi.RazorTargetAssemblyInfo.cache
 C:\Users\Pedro\Desktop\Projeto-SP-Med.-Group\Back-End\sp.med.group.webApi\sp.med.group.webApi\obj\Debug\net5.0\sp.med.group.webApi.csproj.CopyComplete
@@ -136,3 +135,4 @@ C:\Users\48967937814\Desktop\Projeto-SP-Med.-Group\Back-End\sp.med.group.webApi\
 C:\Users\48967937814\Desktop\Projeto-SP-Med.-Group\Back-End\sp.med.group.webApi\sp.med.group.webApi\obj\Debug\net5.0\sp.med.group.webApi.pdb
 C:\Users\48967937814\Desktop\Projeto-SP-Med.-Group\Back-End\sp.med.group.webApi\sp.med.group.webApi\obj\Debug\net5.0\sp.med.group.webApi.genruntimeconfig.cache
 C:\Users\48967937814\Desktop\Projeto-SP-Med.-Group\Back-End\sp.med.group.webApi\sp.med.group.webApi\obj\Debug\net5.0\sp.med.group.webApi.csproj.CopyComplete
+C:\Users\Pedro\Desktop\Projeto-SP-Med.-Group\Back-End\sp.med.group.webApi\sp.med.group.webApi\obj\Debug\net5.0\staticwebassets\sp.med.group.webApi.StaticWebAssets.xml

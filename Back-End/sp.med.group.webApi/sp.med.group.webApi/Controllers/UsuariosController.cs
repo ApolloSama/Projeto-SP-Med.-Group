@@ -33,7 +33,9 @@ namespace sp.med.group.webApi.Controllers
                 int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
 
                 return Ok(_usuarioRepository.ListarMinhas(idUsuario));
-            } catch (Exception error)
+            }
+
+            catch (Exception error)
             {
                 return BadRequest(new
                 {

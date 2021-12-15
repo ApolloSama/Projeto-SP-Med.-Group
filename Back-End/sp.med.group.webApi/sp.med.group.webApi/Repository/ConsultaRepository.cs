@@ -33,6 +33,21 @@ namespace sp.med.group.webApi.Repository
 
         //--------------------------------------------------------------------------------
 
+        public void CancelarConsulta(int idConsulta)
+        {
+            Consulta consultaBuscada = ctx.Consultas.Find(idConsulta);
+
+            if (consultaBuscada != null)
+            {
+                consultaBuscada.IdSituacao = 2;
+
+                ctx.Consultas.Update(consultaBuscada);
+                ctx.SaveChanges();
+            }
+        }
+
+        //---------------------------------------------------------------------------------
+
         public Consulta BuscarPorId(int id)
         {
             return ctx.Consultas.FirstOrDefault(e => e.IdConsulta == id); ;
@@ -42,7 +57,7 @@ namespace sp.med.group.webApi.Repository
 
         public void Cadastrar(Consulta novaConsulta)
         {
-            novaConsulta.IdSituacao = 2;
+            novaConsulta.IdSituacao = 3;
             novaConsulta.Descricao = "O médico responsável pela consulta irá inserir uma descrição.";
             ctx.Consultas.Add(novaConsulta);
             ctx.SaveChanges();

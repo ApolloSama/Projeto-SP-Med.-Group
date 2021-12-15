@@ -82,14 +82,17 @@ namespace sp.med.group.webApi.Repository
             {
                 Medico medico = ctx.Medicos.FirstOrDefault(u => u.IdUsuario == idUsuario);
 
-                return ctx.Consultas.Select(c => new Consulta() { DataConsulta = c.DataConsulta, IdConsulta = c.IdConsulta, IdMedico = c.IdMedico, IdPaciente = c.IdPaciente, IdSituacao = c.IdSituacao, Descricao = c.Descricao }).Where(m => m.IdMedico == medico.IdMedico).ToList();
+                return ctx.Consultas.Include(m => m.IdMedicoNavigation).Include(m => m.IdSituacaoNavigation).Where(m => m.IdMedico == medico.IdMedico).ToList();
+                //return ctx.Consultas.Include(p => p.IdPacienteNavigation).Include(p => p.IdSituacaoNavigation).Where(m => m.IdMedico == medico.IdMedico).ToList();
+                //return ctx.Consultas.Select(c => new Consulta() { DataConsulta = c.DataConsulta, IdConsulta = c.IdConsulta, IdMedico = c.IdMedico, IdPaciente = c.IdPaciente, IdSituacao = c.IdSituacao, Descricao = c.Descricao }).Where(m => m.IdMedico == medico.IdMedico).ToList();
             }
 
             else if (usuarioLogado.IdTipoUsuario == 3)
             {
                 Paciente paciente = ctx.Pacientes.FirstOrDefault(u => u.IdUsuario == idUsuario);
 
-                return ctx.Consultas.Select(c => new Consulta() { DataConsulta = c.DataConsulta, IdConsulta = c.IdConsulta, IdMedico = c.IdMedico, IdPaciente = c.IdPaciente, IdSituacao = c.IdSituacao, Descricao = c.Descricao }).Where(p => p.IdPaciente == paciente.IdPaciente).ToList();
+                return ctx.Consultas.Include(m => m.IdMedicoNavigation).Include(m => m.IdSituacaoNavigation).Where(m => m.IdPaciente == paciente.IdPaciente).ToList();
+                //return ctx.Consultas.Select(c => new Consulta() { DataConsulta = c.DataConsulta, IdConsulta = c.IdConsulta, IdMedico = c.IdMedico, IdPaciente = c.IdPaciente, IdSituacao = c.IdSituacao, Descricao = c.Descricao }).Where(p => p.IdPaciente == paciente.IdPaciente).ToList();
             }
 
             else
