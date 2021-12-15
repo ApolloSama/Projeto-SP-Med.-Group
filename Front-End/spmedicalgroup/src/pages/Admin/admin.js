@@ -64,6 +64,7 @@ export default function Administrador() {
                     setIdMedico(0);
                     buscarConsultas();
                     setIsLoading(false);
+                    window.location.reload();
                 }
             })
             .catch(

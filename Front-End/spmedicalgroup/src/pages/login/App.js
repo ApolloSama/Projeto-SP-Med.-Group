@@ -40,7 +40,7 @@ export default function App() {
 
           let base64 = localStorage.getItem('usuario-login').split('.')[1]
           console.log(base64)
-          
+
           if (parseJwt().role === '1') {
             // history.push('/administrador');
             console.log(`estou logado: ` + usuarioAutenticado());
@@ -73,31 +73,34 @@ export default function App() {
   return (
 
     <div className="body_login">
-    <div className="grid posix_login">
+      <div className="grid posix_login">
         <div className="bem_vindo_login">
-            <div className="img_medicos_login"></div>
-            <div className="msg_login">
-                <h1>SP Medical Group</h1>
-                <p>Fique tranquilo, nossa família de especialistas em saúde vai cuidar da
-                    sua!
-                </p>
-            </div>
+          <div className="img_medicos_login"></div>
+          <div className="msg_login">
+            <h1>Bem vindo ao Sp Medical Group!</h1>
+          </div>
         </div>
         <div className="box_login">
-            <form action="" className="dados_login" onSubmit={ fazerLogin }>
-                <h1>Entre e seja bem-vindo!</h1>
-                <div className="inputs_login">
-                    <input type="email" value={email} onChange={ (campo) => setEmail( campo.target.value ) } placeholder="E-mail" />
-                    <input type="password" value={senha} onChange={ (campo) => setSenha( campo.target.value ) } placeholder="Senha" />
-                    <p>{errorMsg}</p>
-                    <button type="submit"
-                        disabled={ isLoading ? true : false }
-                    >Entrar</button>
-                </div>
-            </form>
+          <form action="" className="dados_login" onSubmit={fazerLogin}>
+            <div className="inputs_login">
+              <input type="email"
+                value={email}
+                onChange={(campo) => setEmail(campo.target.value)}
+                placeholder="E-mail" />
+
+              <input type="password"
+                value={senha}
+                onChange={(campo) => setSenha(campo.target.value)}
+                placeholder="Senha" />
+              <p>{errorMsg}</p>
+
+              <button type="submit" disabled={isLoading ? true : false}>Entrar</button>
+
+            </div>
+          </form>
         </div>
+      </div>
     </div>
-</div>
 
 
   )

@@ -15,14 +15,14 @@ export default function Medico() {
 
 
     function buscarConsultas() {
-        console.log('buscou as consultaaas')
+        console.log('buscou as consultas')
         axios('http://localhost:5000/api/Usuarios/minhas',
             {
                 headers: { 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login') }
             }
         )
             .then(response => {
-                console.log(response)
+                console.log(listaConsultas)
                 if (response.status === 200) {
                     setListaConsultas(response.data)
                 }
@@ -77,12 +77,14 @@ export default function Medico() {
                             name="idConsulta"
                             value={idConsulta}
                             onChange={campo => setIdConsulta(campo.target.value)}
+                            placeholder="Id da Consulta"
                         />
                         <input
                             type="text"
-                            name="descricao"
+                            name="desc"
                             value={descricaoAtualizada}
                             onChange={(campo) => setDescricaoAtualizada(campo.target.value)}
+                            placeholder="Desc da consulta"
                         />
                         {isLoading && (
                             <button disabled className='btn' type='submit'>
