@@ -16,12 +16,19 @@
 
   .form_consulta { 
       background-color: white;
+      height : 40vh;
       width: 60%;
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
+  }
+
+  .form_consulta input {
+    background-color: rosybrown;
+    width: 50%;
   }
   
   .conteudo_medico {
       background-color: white;
       border-radius: 8px;
+      margin-top: 50px;
   }

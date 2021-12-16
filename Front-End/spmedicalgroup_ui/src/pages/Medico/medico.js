@@ -107,6 +107,7 @@ export default function Medico() {
                         <table className="tabela_medico" style={{ borderCollapse: 'separate', borderSpacing: 30 }}>
                             <thead>
                                 <tr>
+                                    <th>Id Consulta</th>
                                     <th>Paciente</th>
                                     <th>Médico</th>
                                     <th>Situacão</th>
@@ -121,6 +122,7 @@ export default function Medico() {
                                     listaConsultas.map((consulta) => {
                                         return (
                                             <tr key={consulta.idConsulta}>
+                                                <td>{consulta.idConsulta}</td>
                                                 <td>{consulta.idPacienteNavigation.nomePaciente}</td>
                                                 <td>{consulta.idMedicoNavigation.nomeMedico}</td>
                                                 {/* <td>{consulta.idSituacaoNavigation.nomeSituacao}</td> */}

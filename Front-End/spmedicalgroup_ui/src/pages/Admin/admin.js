@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from 'axios';
 import React from 'react';
 
+import "../../assets/css/admin.css"
+
 
 export default function Administrador() {
 
@@ -115,37 +117,16 @@ export default function Administrador() {
 
 
     return (
-        <div>
+        <div className="body_admin">
 
-            <div >
-                <section>
-                    <div>
-                        <h2>Lista de Consultas</h2>
-                        <div>
-                            {
-                                listaConsultas.map((consulta) => {
-                                    return (
-                                        <tr key={consulta.idConsulta}>
-                                            <td>{consulta.idPacienteNavigation.nomePaciente}</td>
-                                            <td>{consulta.idMedicoNavigation.nomeMedico}</td>
-                                            <td>{consulta.idSituacaoNavigation.nomeSituacao}</td>
-                                            <td>{Intl.DateTimeFormat("pt-BR", {
-                                                year: 'numeric', month: 'numeric', day: 'numeric',
-                                                hour: 'numeric', minute: 'numeric', hour12: true
-                                            }).format(new Date(consulta.dataConsulta))}</td>
-                                            <td>{consulta.descricao}</td>
-                                        </tr>
-                                    )
-                                })
-                            }
-                        </div>
-                    </div>
-                    <div>
+            <div className="box_cadastro grid">
+                <section className="conteudo_cadastro">
+                    <div className="teste">
                         <h2>Cadastrar Consulta</h2>
-                        <div>
-                            <form onSubmit={cadastrarConsulta}>
-                                <div>
 
+                        <div className="form_admin">
+                            <form onSubmit={cadastrarConsulta}>
+                                <div className="inputs">
                                     <select
                                         name="paciente"
                                         value={idPaciente}
@@ -187,11 +168,53 @@ export default function Administrador() {
                                     </select>
 
                                     <input type="datetime-local" name="dataConsulta" value={dataConsulta} onChange={(campo) => setDataConsulta(campo.target.value)} />
-
                                 </div>
+
                                 <button type="submit">Cadastrar</button>
+
+
+
                             </form>
+
+
                         </div>
+
+
+                    </div>
+
+                    <div className="conteudo_admin">
+                        <table className="tabela_admin" style={{ borderCollapse: 'separate', borderSpacing: 30 }}>
+                            <thead>
+                                <tr>
+                                    <th>Paciente</th>
+                                    <th>Médico</th>
+                                    <th>Situacão</th>
+                                    <th>Data</th>
+                                    <th>Descrição</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                {/* {
+                                    listaConsultas.map((consulta) => {
+                                        return (
+                                            <tr key={consulta.idConsulta}>
+                                                <td>{consulta.idPacienteNavigation.nomePaciente}</td>
+                                                <td>{consulta.idMedicoNavigation.nomeMedico}</td>
+                                                <td>{consulta.idSituacaoNavigation.nomeSituacao}</td>
+                                                <td>{Intl.DateTimeFormat("pt-BR", {
+                                                    year: 'numeric', month: 'numeric', day: 'numeric',
+                                                    hour: 'numeric', minute: 'numeric', hour12: true
+                                                }).format(new Date(consulta.dataConsulta))}</td>
+                                                <td>{consulta.descricao}</td>
+                                            </tr>
+                                        )
+                                    })
+                                } */}
+
+                            </tbody>
+                        </table>
                     </div>
 
                 </section>
