@@ -125,7 +125,7 @@ export default function Medico() {
                                                 <td>{consulta.idConsulta}</td>
                                                 <td>{consulta.idPacienteNavigation.nomePaciente}</td>
                                                 <td>{consulta.idMedicoNavigation.nomeMedico}</td>
-                                                {/* <td>{consulta.idSituacaoNavigation.nomeSituacao}</td> */}
+                                                <td>{consulta.idSituacaoNavigation.nomeSituacao}</td>
                                                 <td>{Intl.DateTimeFormat("pt-BR", {
                                                     year: 'numeric', month: 'numeric', day: 'numeric',
                                                     hour: 'numeric', minute: 'numeric', hour12: true

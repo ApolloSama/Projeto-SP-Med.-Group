@@ -78,27 +78,57 @@ namespace sp.med.group.webApi.Repository
         {
             Usuario usuarioLogado = ctx.Usuarios.Find(idUsuario);
 
-            if (usuarioLogado.IdTipoUsuario == 2)
-            {
-                Medico medico = ctx.Medicos.FirstOrDefault(u => u.IdUsuario == idUsuario);
+            //if (usuarioLogado.IdTipoUsuario == 2)
+            //{
+                //Medico medico = ctx.Medicos.FirstOrDefault(u => u.IdUsuario == idUsuario);
 
                 //return ctx.Consultas.Include(m => m.IdMedicoNavigation).Include(m => m.IdSituacaoNavigation).Where(m => m.IdMedico == medico.IdMedico).ToList();
-                return ctx.Consultas.Include(p => p.IdPacienteNavigation).Include(p => p.IdSituacaoNavigation).Where(m => m.IdMedico == medico.IdMedico).ToList();
+                return ctx.Consultas
+                    //.Include(p => p.IdPacienteNavigation)
+                    //.Include(p => p.IdMedicoNavigation)
+                    //.Include(p => p.IdSituacaoNavigation)
+                    .Select(c => new Consulta() { 
+                        DataConsulta = c.DataConsulta, 
+                        IdConsulta = c.IdConsulta, 
+                        IdMedico = c.IdMedico, 
+                        IdMedicoNavigation = new Medico()
+                        {
+                            IdMedico = c.IdMedico,
+                            NomeMedico = c.IdMedicoNavigation.NomeMedico,
+                            IdUsuario = c.IdMedicoNavigation.IdUsuario
+                        },
+                        IdPaciente = c.IdPaciente,
+                        IdPacienteNavigation = new Paciente()
+                        {
+                            IdPaciente = c.IdPaciente,
+                            NomePaciente = c.IdPacienteNavigation.NomePaciente,
+                            IdUsuario = c.IdPacienteNavigation.IdUsuario
+                        },
+                        IdSituacao = c.IdSituacao,
+                        IdSituacaoNavigation = new Situacao()
+                        {
+                            IdSituacao = c.IdSituacao,
+                            NomeSituacao = c.IdSituacaoNavigation.NomeSituacao
+                        },
+                        Descricao = c.Descricao 
+                    })
+                    .Where(c => c.IdMedicoNavigation.IdUsuario == idUsuario || c.IdPacienteNavigation.IdUsuario == idUsuario)
+                    .ToList();
                 //return ctx.Consultas.Select(c => new Consulta() { DataConsulta = c.DataConsulta, IdConsulta = c.IdConsulta, IdMedico = c.IdMedico, IdPaciente = c.IdPaciente, IdSituacao = c.IdSituacao, Descricao = c.Descricao }).Where(m => m.IdMedico == medico.IdMedico).ToList();
-            }
+            //}
 
-            else if (usuarioLogado.IdTipoUsuario == 3)
-            {
-                Paciente paciente = ctx.Pacientes.FirstOrDefault(u => u.IdUsuario == idUsuario);
+            //else if (usuarioLogado.IdTipoUsuario == 3)
+            //{
+            //    Paciente paciente = ctx.Pacientes.FirstOrDefault(u => u.IdUsuario == idUsuario);
 
-                return ctx.Consultas.Include(m => m.IdMedicoNavigation).Include(m => m.IdSituacaoNavigation).Where(m => m.IdPaciente == paciente.IdPaciente).ToList();
+            //    return ctx.Consultas.Include(m => m.IdMedicoNavigation).Include(m => m.IdSituacaoNavigation).Where(m => m.IdPaciente == paciente.IdPaciente).ToList();
                 //return ctx.Consultas.Select(c => new Consulta() { DataConsulta = c.DataConsulta, IdConsulta = c.IdConsulta, IdMedico = c.IdMedico, IdPaciente = c.IdPaciente, IdSituacao = c.IdSituacao, Descricao = c.Descricao }).Where(p => p.IdPaciente == paciente.IdPaciente).ToList();
-            }
+            //}
 
-            else
-            {
-                return null;
-            }           
+            //else
+            //{
+            //    return null;
+            //}           
         }
 
         //--------------------------------------------------------------------------------

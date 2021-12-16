@@ -8,9 +8,9 @@ namespace sp.med.group.webApi.Domains
     public partial class Consulta
     {
         public int IdConsulta { get; set; }
-        public int? IdPaciente { get; set; }
-        public int? IdMedico { get; set; }
-        public byte? IdSituacao { get; set; }
+        public int IdPaciente { get; set; }
+        public int IdMedico { get; set; }
+        public byte IdSituacao { get; set; }
         public DateTime DataConsulta { get; set; }
         public string Descricao { get; set; }
 

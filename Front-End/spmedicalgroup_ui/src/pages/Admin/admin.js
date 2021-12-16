@@ -140,7 +140,7 @@ export default function Administrador() {
                                                         key={paciente.idPaciente}
                                                         value={paciente.idPaciente}
                                                     >
-                                                        {paciente.nomeCompleto}
+                                                        {paciente.nomePaciente}
                                                     </option>
                                                 );
                                             })
@@ -160,7 +160,7 @@ export default function Administrador() {
                                                         key={medico.idMedico}
                                                         value={medico.idMedico}
                                                     >
-                                                        {medico.nomeCompleto}
+                                                        {medico.nomeMedico}
                                                     </option>
                                                 );
                                             })
@@ -170,7 +170,7 @@ export default function Administrador() {
                                     <input type="datetime-local" name="dataConsulta" value={dataConsulta} onChange={(campo) => setDataConsulta(campo.target.value)} />
                                 </div>
 
-                                <button type="submit">Cadastrar</button>
+                                <button type="submit" disabled={isLoading ? true : false}>Cadastrar</button>
 
 
 
@@ -196,7 +196,7 @@ export default function Administrador() {
 
                             <tbody>
 
-                                {/* {
+                                {
                                     listaConsultas.map((consulta) => {
                                         return (
                                             <tr key={consulta.idConsulta}>
@@ -211,7 +211,7 @@ export default function Administrador() {
                                             </tr>
                                         )
                                     })
-                                } */}
+                                }
 
                             </tbody>
                         </table>

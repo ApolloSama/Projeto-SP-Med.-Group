@@ -23,7 +23,7 @@ namespace sp.med.group.webApi.Repository
             if (consultaBuscada != null)
             {
                 consultaBuscada.IdConsulta = consultaAtualizada.IdConsulta;
-                consultaBuscada.IdSituacao = consultaAtualizada.IdSituacao;
+                consultaBuscada.IdSituacao = 1;
                 consultaBuscada.Descricao = consultaAtualizada.Descricao;
 
                 ctx.Consultas.Update(consultaBuscada);
