@@ -58,7 +58,7 @@ export default function Administrador() {
         )
             .then(resposta => {
                 if (resposta.status === 201) {
-                    console.log("Consulta cadastrada com sucesso!");
+                    console.log("Sua consulta foi cadastrada!");
                     setDataConsulta(new Date());
                     setIdPaciente(0);
                     setIdMedico(0);
@@ -68,7 +68,7 @@ export default function Administrador() {
                 }
             })
             .catch(
-                erro => console.log(erro, "DEU RUIM"), setDataConsulta(),
+                erro => console.log(erro, "Algo de errado não está certo"), setDataConsulta(),
                 setIdPaciente(0), setIdMedico(0), setIsLoading(false)
             );
     }

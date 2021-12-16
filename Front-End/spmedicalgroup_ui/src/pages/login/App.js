@@ -3,10 +3,12 @@ import axios from 'axios';
 import { parseJwt, usuarioAutenticado } from "../../services/auth";
 import { useHistory } from 'react-router-dom';
 
-export default function App() {
-  const [email, setEmail] = useState('adm@gmail.com')
+import "../../assets/css/login.css"
 
-  const [senha, setSenha] = useState('admin123')
+export default function App() {
+  const [email, setEmail] = useState('email1@gmail.com')
+
+  const [senha, setSenha] = useState('senha1123')
 
   const [errorMsg, setErrorMsg] = useState('')
 
@@ -73,31 +75,30 @@ export default function App() {
   return (
 
     <div className="body_login">
-      <div className="grid posix_login">
-        <div className="bem_vindo_login">
-          <div className="img_medicos_login"></div>
-          <div className="msg_login">
-            <h1>Bem vindo ao Sp Medical Group!</h1>
-          </div>
-        </div>
-        <div className="box_login">
-          <form action="" className="dados_login" onSubmit={fazerLogin}>
-            <div className="inputs_login">
-              <input type="email"
-                value={email}
-                onChange={(campo) => setEmail(campo.target.value)}
-                placeholder="E-mail" />
+      <div className="grid">
+        <div className="conteudo_login">
 
-              <input type="password"
-                value={senha}
-                onChange={(campo) => setSenha(campo.target.value)}
-                placeholder="Senha" />
-              <p>{errorMsg}</p>
-
-              <button type="submit" disabled={isLoading ? true : false}>Entrar</button>
-
+          <div className="h1">
+            <div className="msg_login">
+              <h1>Bem vindo ao Sp. Medical Group!</h1>
             </div>
-          </form>
+          </div>
+
+            <form action="" className="dados_login grid" onSubmit={fazerLogin}>
+                <input type="email"
+                  value={email}
+                  onChange={(campo) => setEmail(campo.target.value)}
+                  placeholder="E-mail" />
+
+                <input type="password"
+                  value={senha}
+                  onChange={(campo) => setSenha(campo.target.value)}
+                  placeholder="Senha" />
+                <p>{errorMsg}</p>
+
+                <button type="submit" disabled={isLoading ? true : false}>Entrar</button>
+            </form>
+
         </div>
       </div>
     </div>

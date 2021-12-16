@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from 'axios';
 import React from 'react';
 
+import "../../assets/css/paciente.css"
+
 
 export default function Medico() {
 
@@ -15,7 +17,7 @@ export default function Medico() {
 
 
     function buscarConsultas() {
-        console.log('buscou as consultaaas')
+        console.log('buscou as consultas')
         axios('http://localhost:5000/api/Usuarios/minhas',
             {
                 headers: { 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login') }
@@ -73,19 +75,19 @@ export default function Medico() {
 
 
     return (
-        <div>
+        <div className="body_paciente">
             <main>
-                <section>
+                <section className="grid">
 
-                    <div>
-                        <table style={{ borderCollapse: 'separate', borderSpacing: 30 }}>
+                    <div className="conteudo_paciente">
+                        <table className="tabela_paciente" style={{ borderCollapse: 'separate', borderSpacing: 30 }}>
                             <thead>
                                 <tr>
                                     <th>Paciente</th>
-                                    <th>Medico</th>
-                                    <th>Situacao</th>
+                                    <th>Médico</th>
+                                    <th>Situacão</th>
                                     <th>Data</th>
-                                    <th>Descricao</th>
+                                    <th>Descrição</th>
                                 </tr>
                             </thead>
 

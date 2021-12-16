@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from 'axios';
 import React from 'react';
 
+import "../../assets/css/medico.css"
+
 
 export default function Medico() {
 
@@ -67,11 +69,11 @@ export default function Medico() {
 
 
     return (
-        <div>
+        <div className="body_medico">
             <main>
 
-                <section>
-                    <form onSubmit={atualizarConsulta}>
+                <section className="grid">
+                    <form className="form_consulta" onSubmit={atualizarConsulta}>
                         <input
                             type="text"
                             name="idConsulta"
@@ -99,17 +101,17 @@ export default function Medico() {
                     </form>
                 </section>
 
-                <section>
+                <section className="grid">
 
-                    <div>
-                        <table style={{ borderCollapse: 'separate', borderSpacing: 30 }}>
+                    <div className="conteudo_medico">
+                        <table className="tabela_medico" style={{ borderCollapse: 'separate', borderSpacing: 30 }}>
                             <thead>
                                 <tr>
                                     <th>Paciente</th>
-                                    <th>Medico</th>
-                                    <th>Situacao</th>
+                                    <th>Médico</th>
+                                    <th>Situacão</th>
                                     <th>Data</th>
-                                    <th>Descricao</th>
+                                    <th>Descrição</th>
                                 </tr>
                             </thead>
 
@@ -121,7 +123,7 @@ export default function Medico() {
                                             <tr key={consulta.idConsulta}>
                                                 <td>{consulta.idPacienteNavigation.nomePaciente}</td>
                                                 <td>{consulta.idMedicoNavigation.nomeMedico}</td>
-                                                <td>{consulta.idSituacaoNavigation.nomeSituacao}</td>
+                                                {/* <td>{consulta.idSituacaoNavigation.nomeSituacao}</td> */}
                                                 <td>{Intl.DateTimeFormat("pt-BR", {
                                                     year: 'numeric', month: 'numeric', day: 'numeric',
                                                     hour: 'numeric', minute: 'numeric', hour12: true

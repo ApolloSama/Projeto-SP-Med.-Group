@@ -75,9 +75,11 @@ namespace sp.med.group.webApi.Repository
 
         public List<Consulta> ListarTodas()
         {
-            return ctx.Consultas.ToList();
-        }
+            return ctx.Consultas.Select(c => new Consulta() { IdPacienteNavigation = c.IdPacienteNavigation, IdMedicoNavigation = c.IdMedicoNavigation, IdSituacaoNavigation = c.IdSituacaoNavigation, DataConsulta = c.DataConsulta, Descricao = c.Descricao, IdConsulta = c.IdConsulta, IdMedico = c.IdMedico, IdPaciente = c.IdPaciente, IdSituacao = c.IdSituacao }).ToList();
+            
+            //return ctx.Consultas.ToList();
 
-        //--------------------------------------------------------------------------------
+            //--------------------------------------------------------------------------------
+        }
     }
 }
