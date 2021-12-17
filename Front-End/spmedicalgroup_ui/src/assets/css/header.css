@@ -1,0 +1,36 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    height: 8vh;
+    background-color: white;
+}
+
+.logo_header {
+    width: 71px;
+    height : 71px;
+}
+
+.logo_nome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22vw;
+    margin-left: 45px;
+}
+
+.logo_nome span {
+    margin-left: 20px;
+}
+
+.nav_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25vw;
+    margin-right: 45px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}

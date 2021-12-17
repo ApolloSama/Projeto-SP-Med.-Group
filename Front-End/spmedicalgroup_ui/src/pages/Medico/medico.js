@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import axios from 'axios';
 import React from 'react';
 
+import Header from '../../components/header'
+import Footer from '../../components/footer'
+
 import "../../assets/css/medico.css"
 
 
@@ -71,7 +74,7 @@ export default function Medico() {
     return (
         <div className="body_medico">
             <main>
-
+                <Header/>
                 <section className="grid">
                     <form className="form_consulta" onSubmit={atualizarConsulta}>
                         <input
@@ -101,7 +104,7 @@ export default function Medico() {
                     </form>
                 </section>
 
-                <section className="grid">
+                <section className="grid_medico">
 
                     <div className="conteudo_medico">
                         <table className="tabela_medico" style={{ borderCollapse: 'separate', borderSpacing: 30 }}>
@@ -141,6 +144,7 @@ export default function Medico() {
 
                     </div>
 
+                    <Footer />
                 </section>
             </main>
         </div>

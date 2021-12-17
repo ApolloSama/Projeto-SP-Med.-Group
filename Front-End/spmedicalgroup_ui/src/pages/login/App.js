@@ -4,6 +4,7 @@ import { parseJwt, usuarioAutenticado } from "../../services/auth";
 import { useHistory } from 'react-router-dom';
 
 import "../../assets/css/login.css"
+import logo from "../../assets/img/Group 1.png"
 
 export default function App() {
   const [email, setEmail] = useState('email1@gmail.com')
@@ -73,36 +74,35 @@ export default function App() {
 
 
   return (
+    <div className='login'>
+      <div className="body_login">
+        <div className="grid">
+          <div className="conteudo_login">
 
-    <div className="body_login">
-      <div className="grid">
-        <div className="conteudo_login">
-
-          <div className="h1">
-            <div className="msg_login">
-              <h1>Bem vindo ao Sp. Medical Group!</h1>
+            <div className="h1">
+              <div className="msg_login">
+                <img src={logo} className='logo'></img>
+              </div>
             </div>
-          </div>
 
             <form action="" className="dados_login grid" onSubmit={fazerLogin}>
-                <input type="email"
-                  value={email}
-                  onChange={(campo) => setEmail(campo.target.value)}
-                  placeholder="E-mail" />
+              <input type="email"
+                value={email}
+                onChange={(campo) => setEmail(campo.target.value)}
+                placeholder="E-mail" />
 
-                <input type="password"
-                  value={senha}
-                  onChange={(campo) => setSenha(campo.target.value)}
-                  placeholder="Senha" />
-                <p>{errorMsg}</p>
+              <input type="password"
+                value={senha}
+                onChange={(campo) => setSenha(campo.target.value)}
+                placeholder="Senha" />
+              <p>{errorMsg}</p>
 
-                <button type="submit" disabled={isLoading ? true : false}>Entrar</button>
+              <button type="submit" disabled={isLoading ? true : false}>Login</button>
             </form>
 
+          </div>
         </div>
       </div>
     </div>
-
-
   )
 }

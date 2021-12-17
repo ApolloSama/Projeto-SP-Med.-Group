@@ -14,21 +14,45 @@
     background-color: rgb(0, 128, 96);
   }
 
+  .body_medico {
+    height: 100vh;
+    background-image: url(../img/pacientes\ 1.png);
+  }
+
   .form_consulta { 
-      background-color: white;
+      background-color: #DFDFDF;
       height : 40vh;
-      width: 60%;
+      width: 35%;
+      margin-top: 50px;
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
   }
 
   .form_consulta input {
-    background-color: rosybrown;
+    background-color: white;
     width: 50%;
   }
+
+  .form_consulta button {
+    background-color: #2C05EB;
+    color: white;
+    border: none;
+  }
+
+  .grid_medico {
+    display: flex;
+    flex-direction: column;
+    margin:auto;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    height: 47vh;
+  }
+
+  
   
   .conteudo_medico {
-      background-color: white;
+      background-color: #DFDFDF;
       border-radius: 8px;
       margin-top: 50px;
   }

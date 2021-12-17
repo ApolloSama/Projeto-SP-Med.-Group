@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import axios from 'axios';
 import React from 'react';
 
+import Header from '../../components/header'
+import Footer from '../../components/footer'
+
 import "../../assets/css/admin.css"
 
 
@@ -118,14 +121,14 @@ export default function Administrador() {
 
     return (
         <div className="body_admin">
-
+            <Header />
             <div className="box_cadastro grid">
                 <section className="conteudo_cadastro">
                     <div className="teste">
                         <h2>Cadastrar Consulta</h2>
 
-                        <div className="form_admin">
-                            <form onSubmit={cadastrarConsulta}>
+                        <div className="box_form">
+                            <form className="form_admin" onSubmit={cadastrarConsulta}>
                                 <div className="inputs">
                                     <select
                                         name="paciente"

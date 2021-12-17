@@ -11,10 +11,17 @@
 
   .body_admin {
       width: 100vw;
+      height: 100vh;
+      background-image: url(../img/medicos.png);
+  }
+
+  .box_cadastro {
+
   }
 
   .conteudo_cadastro {
       width : 55vw;
+      height: 100vh;
   }
 
   .teste {
@@ -29,19 +36,28 @@
       border-bottom-right-radius: 7px;
   }
 
-
-  form {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      justify-content: space-around;
-      align-items: center;
+  .box_form {
+      width: 535px;
   }
 
   .form_admin {
+      display:flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height : 85px;
+  }
+
+  .form_admin button {
+      background-color: #2C05EB;
+      color: white;
+      border: none;
+  }
+
+  .inputs {
       display: flex;
       justify-content: space-between;
-      height : 90px;
+      height: 25px;
   }
 
   .conteudo_admin {

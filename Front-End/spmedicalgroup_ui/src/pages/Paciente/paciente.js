@@ -2,7 +2,11 @@ import { useState, useEffect } from "react";
 import axios from 'axios';
 import React from 'react';
 
+import Header from '../../components/header'
+import Footer from '../../components/footer'
+
 import "../../assets/css/paciente.css"
+
 
 
 export default function Medico() {
@@ -76,8 +80,11 @@ export default function Medico() {
 
     return (
         <div className="body_paciente">
+
+
             <main>
-                <section className="grid">
+                <Header/>
+                <section className="grid_paciente">
 
                     <div className="conteudo_paciente">
                         <table className="tabela_paciente" style={{ borderCollapse: 'separate', borderSpacing: 30 }}>
@@ -115,8 +122,10 @@ export default function Medico() {
 
                     </div>
 
+                    <Footer />
                 </section>
             </main>
+
         </div>
     )
 
