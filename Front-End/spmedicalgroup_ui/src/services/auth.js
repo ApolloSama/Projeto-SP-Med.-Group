@@ -1,6 +1,6 @@
 export const usuarioAutenticado = () => localStorage.getItem('usuario-login') !== null;
 
-// define a constante parseJwt que retorn o payload do usuário logado convertido em JSON
+// define a constante parseJwt que retorna o payload do usuário logado convertido em JSON
 export const parseJwt = () => {
 
     // define a variável base64 que recebe o payload do token do usuário logado

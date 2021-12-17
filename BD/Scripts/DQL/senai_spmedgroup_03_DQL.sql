@@ -1,4 +1,4 @@
-USE SP_MED_GROUP_CABRAL;
+USE SP_MED_GROUP;
 GO
 
 SELECT * FROM especialidade;
